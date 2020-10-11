@@ -261,7 +261,7 @@ public class UpdatePanel extends JPanel {
             pstmt.executeUpdate();
          
             
-            JOptionPane.showMessageDialog(null, "Ãß°¡µÇ¾ú½À´Ï´Ù.");
+            JOptionPane.showMessageDialog(null, "ì¶”ê°€ë˜ì—ˆìŠµë‹ˆë‹¤.");
             
             for(JTextField t:tf) {
                t.setText("");
@@ -340,7 +340,7 @@ public class UpdatePanel extends JPanel {
             pstmt.executeUpdate();
          
             
-            JOptionPane.showMessageDialog(null, "Ãß°¡µÇ¾ú½À´Ï´Ù.");
+            JOptionPane.showMessageDialog(null, "ì¶”ê°€ë˜ì—ˆìŠµë‹ˆë‹¤.");
             
             for(JTextField t:tf) {
                t.setText("");
@@ -390,7 +390,7 @@ public class UpdatePanel extends JPanel {
             pstmt.executeUpdate();
          
             
-            JOptionPane.showMessageDialog(null, "Ãß°¡µÇ¾ú½À´Ï´Ù.");
+            JOptionPane.showMessageDialog(null, "ì¶”ê°€ë˜ì—ˆìŠµë‹ˆë‹¤.");
             
             for(JTextField t:tf) {
                t.setText("");
@@ -446,7 +446,7 @@ public class UpdatePanel extends JPanel {
             pstmt.executeUpdate();
          
             
-            JOptionPane.showMessageDialog(null, "Ãß°¡µÇ¾ú½À´Ï´Ù.");
+            JOptionPane.showMessageDialog(null, "ì¶”ê°€ë˜ì—ˆìŠµë‹ˆë‹¤.");
             
             for(JTextField t:tf) {
                t.setText("");
@@ -468,7 +468,7 @@ public class UpdatePanel extends JPanel {
             pstmt.executeUpdate();
          
             
-            JOptionPane.showMessageDialog(null, "»èÁ¦µÇ¾ú½À´Ï´Ù.");
+            JOptionPane.showMessageDialog(null, "ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤.");
             
             for(JTextField t:tf) {
                t.setText("");
@@ -488,7 +488,7 @@ public class UpdatePanel extends JPanel {
             pstmt.executeUpdate();
          
             
-            JOptionPane.showMessageDialog(null, "»èÁ¦µÇ¾ú½À´Ï´Ù.");
+            JOptionPane.showMessageDialog(null, "ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤.");
             
             for(JTextField t:tf) {
                t.setText("");
@@ -508,7 +508,7 @@ public class UpdatePanel extends JPanel {
             pstmt.executeUpdate();
          
             
-            JOptionPane.showMessageDialog(null, "»èÁ¦µÇ¾ú½À´Ï´Ù.");
+            JOptionPane.showMessageDialog(null, "ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤.");
             
             for(JTextField t:tf) {
                t.setText("");
@@ -528,7 +528,7 @@ public class UpdatePanel extends JPanel {
             pstmt.executeUpdate();
          
             
-            JOptionPane.showMessageDialog(null, "»èÁ¦µÇ¾ú½À´Ï´Ù.");
+            JOptionPane.showMessageDialog(null, "ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤.");
             
             for(JTextField t:tf) {
                t.setText("");
@@ -548,7 +548,7 @@ public class UpdatePanel extends JPanel {
              pstmt.executeUpdate();
           
              
-             JOptionPane.showMessageDialog(null, "»èÁ¦µÇ¾ú½À´Ï´Ù.");
+             JOptionPane.showMessageDialog(null, "ì‚­ì œë˜ì—ˆìŠµë‹ˆë‹¤.");
              
              for(JTextField t:tf) {
                 t.setText("");
@@ -607,7 +607,7 @@ public class UpdatePanel extends JPanel {
                 pstmt.executeUpdate();
              
                 
-                JOptionPane.showMessageDialog(null, "¼öÁ¤µÇ¾ú½À´Ï´Ù.");
+                JOptionPane.showMessageDialog(null, "ìˆ˜ì •ë˜ì—ˆìŠµë‹ˆë‹¤.");
                 
                 for(JTextField t:tf) {
                    t.setText("");
@@ -688,7 +688,7 @@ public class UpdatePanel extends JPanel {
                 pstmt.executeUpdate();
              
                 
-                JOptionPane.showMessageDialog(null, "¼öÁ¤µÇ¾ú½À´Ï´Ù.");
+                JOptionPane.showMessageDialog(null, "ìˆ˜ì •ë˜ì—ˆìŠµë‹ˆë‹¤.");
                 
                 for(JTextField t:tf) {
                    t.setText("");
@@ -738,7 +738,7 @@ public class UpdatePanel extends JPanel {
                 pstmt.executeUpdate();
              
                 
-                JOptionPane.showMessageDialog(null, "¼öÁ¤µÇ¾ú½À´Ï´Ù.");
+                JOptionPane.showMessageDialog(null, "ìˆ˜ì •ë˜ì—ˆìŠµë‹ˆë‹¤.");
                 
                 for(JTextField t:tf) {
                    t.setText("");
@@ -796,7 +796,7 @@ public class UpdatePanel extends JPanel {
                 pstmt.executeUpdate();
              
                 
-                JOptionPane.showMessageDialog(null, "¼öÁ¤µÇ¾ú½À´Ï´Ù.");
+                JOptionPane.showMessageDialog(null, "ìˆ˜ì •ë˜ì—ˆìŠµë‹ˆë‹¤.");
                 
                 for(JTextField t:tf) {
                    t.setText("");
@@ -808,86 +808,86 @@ public class UpdatePanel extends JPanel {
           }
       
       if (table == 7){
-	         try {
-	             String sql = "UPDATE Repair_List SET repairno=?,carid=?,shopid=?,compid=?,license_no=?,repairdetails=?,repairdate=?,repaircost=?,paymentdeadline=?,repairhistory=? WHERE repairno = " + object.toString() + ";";
-	                   
-	             pstmt = conn.prepareStatement(sql);
-	             
-	             if(tf[0].getText().length() > 0) {
-	                 Integer repairno = Integer.parseInt(tf[0].getText());
-	                 pstmt.setInt(1, repairno);
-	              }
-	              else pstmt.setNull(1, Types.INTEGER);
-	              
-	              if(tf[1].getText().length() > 0) {
-	                  Integer carid = Integer.parseInt(tf[1].getText());
-	                  pstmt.setInt(2, carid);
-	               }
-	               else pstmt.setNull(2, Types.INTEGER);
-	              
-	              if(tf[2].getText().length() > 0) {
-	                  Integer shopid = Integer.parseInt(tf[2].getText());
-	                  pstmt.setInt(3, shopid);
-	               }
-	               else pstmt.setNull(3, Types.INTEGER);
-	              
-	              if(tf[3].getText().length() > 0) {
-	                  Integer compid = Integer.parseInt(tf[3].getText());
-	                  pstmt.setInt(4, compid);
-	               }
-	               else pstmt.setNull(4, Types.INTEGER);
-	              
-	              if(tf[4].getText().length() > 0) {
-	                  Integer license_no = Integer.parseInt(tf[4].getText());
-	                  pstmt.setInt(5, license_no);
-	               }
-	               else pstmt.setNull(5, Types.INTEGER);
-	              
-	              
-	              if(tf[5].getText().length() > 0) {
-	                  String repairdetails = tf[5].getText();
-	                  pstmt.setString(6,  repairdetails);
-	               }
-	               else pstmt.setNull(6, Types.VARCHAR);
-	              
-	              if(tf[6].getText().length() > 0) {
-	                  String repairdate = tf[6].getText();
-	                  pstmt.setString(7,  repairdate);
-	               }
-	               else pstmt.setNull(7, Types.VARCHAR);
-	              
-	              if(tf[7].getText().length() > 0) {
-	                  Integer repaircost = Integer.parseInt(tf[7].getText());
-	                  pstmt.setInt(8, repaircost);
-	               }
-	               else pstmt.setNull(8, Types.INTEGER);
-	              
-	              if(tf[8].getText().length() > 0) {
-	                  String paymentdeadline = tf[8].getText();
-	                  pstmt.setString(9,  paymentdeadline);
-	               }
-	               else pstmt.setNull(9, Types.VARCHAR);
-	              
-	              if(tf[9].getText().length() > 0) {
-	                  String paymentdeadline = tf[9].getText();
-	                  pstmt.setString(10,  paymentdeadline);
-	               }
-	               else pstmt.setNull(10, Types.VARCHAR);
-	              
-	            
-	             pstmt.executeUpdate();
-	          
-	             
-	             JOptionPane.showMessageDialog(null, "¼öÁ¤µÇ¾ú½À´Ï´Ù.");
-	             
-	             for(JTextField t:tf) {
-	                t.setText("");
-	             }
-	             
-	          } catch (SQLException e1) {
-	             JOptionPane.showMessageDialog(null, e1.getMessage());
-	          }
-	       }	
+            try {
+                String sql = "UPDATE Repair_List SET repairno=?,carid=?,shopid=?,compid=?,license_no=?,repairdetails=?,repairdate=?,repaircost=?,paymentdeadline=?,repairhistory=? WHERE repairno = " + object.toString() + ";";
+                      
+                pstmt = conn.prepareStatement(sql);
+                
+                if(tf[0].getText().length() > 0) {
+                    Integer repairno = Integer.parseInt(tf[0].getText());
+                    pstmt.setInt(1, repairno);
+                 }
+                 else pstmt.setNull(1, Types.INTEGER);
+                 
+                 if(tf[1].getText().length() > 0) {
+                     Integer carid = Integer.parseInt(tf[1].getText());
+                     pstmt.setInt(2, carid);
+                  }
+                  else pstmt.setNull(2, Types.INTEGER);
+                 
+                 if(tf[2].getText().length() > 0) {
+                     Integer shopid = Integer.parseInt(tf[2].getText());
+                     pstmt.setInt(3, shopid);
+                  }
+                  else pstmt.setNull(3, Types.INTEGER);
+                 
+                 if(tf[3].getText().length() > 0) {
+                     Integer compid = Integer.parseInt(tf[3].getText());
+                     pstmt.setInt(4, compid);
+                  }
+                  else pstmt.setNull(4, Types.INTEGER);
+                 
+                 if(tf[4].getText().length() > 0) {
+                     Integer license_no = Integer.parseInt(tf[4].getText());
+                     pstmt.setInt(5, license_no);
+                  }
+                  else pstmt.setNull(5, Types.INTEGER);
+                 
+                 
+                 if(tf[5].getText().length() > 0) {
+                     String repairdetails = tf[5].getText();
+                     pstmt.setString(6,  repairdetails);
+                  }
+                  else pstmt.setNull(6, Types.VARCHAR);
+                 
+                 if(tf[6].getText().length() > 0) {
+                     String repairdate = tf[6].getText();
+                     pstmt.setString(7,  repairdate);
+                  }
+                  else pstmt.setNull(7, Types.VARCHAR);
+                 
+                 if(tf[7].getText().length() > 0) {
+                     Integer repaircost = Integer.parseInt(tf[7].getText());
+                     pstmt.setInt(8, repaircost);
+                  }
+                  else pstmt.setNull(8, Types.INTEGER);
+                 
+                 if(tf[8].getText().length() > 0) {
+                     String paymentdeadline = tf[8].getText();
+                     pstmt.setString(9,  paymentdeadline);
+                  }
+                  else pstmt.setNull(9, Types.VARCHAR);
+                 
+                 if(tf[9].getText().length() > 0) {
+                     String paymentdeadline = tf[9].getText();
+                     pstmt.setString(10,  paymentdeadline);
+                  }
+                  else pstmt.setNull(10, Types.VARCHAR);
+                 
+               
+                pstmt.executeUpdate();
+             
+                
+                JOptionPane.showMessageDialog(null, "ìˆ˜ì •ë˜ì—ˆìŠµë‹ˆë‹¤.");
+                
+                for(JTextField t:tf) {
+                   t.setText("");
+                }
+                
+             } catch (SQLException e1) {
+                JOptionPane.showMessageDialog(null, e1.getMessage());
+             }
+          }   
     
    }
    
@@ -942,7 +942,7 @@ public class UpdatePanel extends JPanel {
          pstmt.executeUpdate();
       
          
-         JOptionPane.showMessageDialog(null, "¹İÈ¯Á¤º¸¸¦ Á¡°Ë³»¿ª¿¡ ÀúÀåÇÏ¿´½À´Ï´Ù.");
+         JOptionPane.showMessageDialog(null, "ë°˜í™˜ì •ë³´ë¥¼ ì ê²€ë‚´ì—­ì— ì €ì¥í•˜ì˜€ìŠµë‹ˆë‹¤.");
          
          for(JTextField t:tf) {
             t.setText("");
@@ -954,86 +954,86 @@ public class UpdatePanel extends JPanel {
    }
    
    void repairRequest() {
-	      try {
-	         String sql = "INSERT INTO Repair_List VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-	               
-	         pstmt = conn.prepareStatement(sql);
-	         
-	         if(tf[0].getText().length() > 0) {
-	            Integer repairno = Integer.parseInt(tf[0].getText());
-	            pstmt.setInt(1, repairno);
-	         }
-	         else pstmt.setNull(1, Types.INTEGER);
-	         
-	         if(tf[1].getText().length() > 0) {
-	             Integer carid = Integer.parseInt(tf[1].getText());
-	             pstmt.setInt(2, carid);
-	          }
-	          else pstmt.setNull(2, Types.INTEGER);
-	         
-	         if(tf[2].getText().length() > 0) {
-	             Integer shopid = Integer.parseInt(tf[2].getText());
-	             pstmt.setInt(3, shopid);
-	          }
-	          else pstmt.setNull(3, Types.INTEGER);
-	         
-	         if(tf[3].getText().length() > 0) {
-	             Integer compid = Integer.parseInt(tf[3].getText());
-	             pstmt.setInt(4, compid);
-	          }
-	          else pstmt.setNull(4, Types.INTEGER);
-	         
-	         if(tf[4].getText().length() > 0) {
-	             Integer license_no = Integer.parseInt(tf[4].getText());
-	             pstmt.setInt(5, license_no);
-	          }
-	          else pstmt.setNull(5, Types.INTEGER);
-	         
-	         
-	         if(tf[5].getText().length() > 0) {
-	             String repairdetails = tf[5].getText();
-	             pstmt.setString(6,  repairdetails);
-	          }
-	          else pstmt.setNull(6, Types.VARCHAR);
-	         
-	         if(tf[6].getText().length() > 0) {
-	             String repairdate = tf[6].getText();
-	             pstmt.setString(7,  repairdate);
-	          }
-	          else pstmt.setNull(7, Types.VARCHAR);
-	         
-	         if(tf[7].getText().length() > 0) {
-	             Integer repaircost = Integer.parseInt(tf[7].getText());
-	             pstmt.setInt(8, repaircost);
-	          }
-	          else pstmt.setNull(8, Types.INTEGER);
-	         
-	         if(tf[8].getText().length() > 0) {
-	             String paymentdeadline = tf[8].getText();
-	             pstmt.setString(9,  paymentdeadline);
-	          }
-	          else pstmt.setNull(9, Types.VARCHAR);
-	         
-	         if(tf[9].getText().length() > 0) {
-	             String paymentdeadline = tf[9].getText();
-	             pstmt.setString(10,  paymentdeadline);
-	          }
-	          else pstmt.setNull(10, Types.VARCHAR);
-	         
-	         
-	         pstmt.executeUpdate();
-	      
-	         
-	         JOptionPane.showMessageDialog(null, "¿äÃ»µÇ¾ú½À´Ï´Ù.");
-	         
-	         for(JTextField t:tf) {
-	            t.setText("");
-	         }
-	         
-	      } catch (SQLException e1) {
-	         JOptionPane.showMessageDialog(null, e1.getMessage());
-	      }
-	   }
+         try {
+            String sql = "INSERT INTO Repair_List VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                  
+            pstmt = conn.prepareStatement(sql);
+            
+            if(tf[0].getText().length() > 0) {
+               Integer repairno = Integer.parseInt(tf[0].getText());
+               pstmt.setInt(1, repairno);
+            }
+            else pstmt.setNull(1, Types.INTEGER);
+            
+            if(tf[1].getText().length() > 0) {
+                Integer carid = Integer.parseInt(tf[1].getText());
+                pstmt.setInt(2, carid);
+             }
+             else pstmt.setNull(2, Types.INTEGER);
+            
+            if(tf[2].getText().length() > 0) {
+                Integer shopid = Integer.parseInt(tf[2].getText());
+                pstmt.setInt(3, shopid);
+             }
+             else pstmt.setNull(3, Types.INTEGER);
+            
+            if(tf[3].getText().length() > 0) {
+                Integer compid = Integer.parseInt(tf[3].getText());
+                pstmt.setInt(4, compid);
+             }
+             else pstmt.setNull(4, Types.INTEGER);
+            
+            if(tf[4].getText().length() > 0) {
+                Integer license_no = Integer.parseInt(tf[4].getText());
+                pstmt.setInt(5, license_no);
+             }
+             else pstmt.setNull(5, Types.INTEGER);
+            
+            
+            if(tf[5].getText().length() > 0) {
+                String repairdetails = tf[5].getText();
+                pstmt.setString(6,  repairdetails);
+             }
+             else pstmt.setNull(6, Types.VARCHAR);
+            
+            if(tf[6].getText().length() > 0) {
+                String repairdate = tf[6].getText();
+                pstmt.setString(7,  repairdate);
+             }
+             else pstmt.setNull(7, Types.VARCHAR);
+            
+            if(tf[7].getText().length() > 0) {
+                Integer repaircost = Integer.parseInt(tf[7].getText());
+                pstmt.setInt(8, repaircost);
+             }
+             else pstmt.setNull(8, Types.INTEGER);
+            
+            if(tf[8].getText().length() > 0) {
+                String paymentdeadline = tf[8].getText();
+                pstmt.setString(9,  paymentdeadline);
+             }
+             else pstmt.setNull(9, Types.VARCHAR);
+            
+            if(tf[9].getText().length() > 0) {
+                String paymentdeadline = tf[9].getText();
+                pstmt.setString(10,  paymentdeadline);
+             }
+             else pstmt.setNull(10, Types.VARCHAR);
+            
+            
+            pstmt.executeUpdate();
+         
+            
+            JOptionPane.showMessageDialog(null, "ìš”ì²­ë˜ì—ˆìŠµë‹ˆë‹¤.");
+            
+            for(JTextField t:tf) {
+               t.setText("");
+            }
+            
+         } catch (SQLException e1) {
+            JOptionPane.showMessageDialog(null, e1.getMessage());
+         }
+      }
    
    void carRent() {
          try {
@@ -1104,7 +1104,7 @@ public class UpdatePanel extends JPanel {
             pstmt.executeUpdate();
          
             
-            JOptionPane.showMessageDialog(null, "´ë¿©¿Ï·á");
+            JOptionPane.showMessageDialog(null, "ëŒ€ì—¬ì™„ë£Œ");
             
             for(JTextField t:tf) {
                t.setText("");

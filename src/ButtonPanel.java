@@ -12,12 +12,12 @@ public class ButtonPanel extends JPanel {
    JButton btnInput, btnDelete, btnUpdate, btnReturn,btnRequest, btnRent;
 
    ButtonPanel() {
-      btnInput = new JButton("ÀÔ·Â");
-      btnDelete = new JButton("»èÁ¦");
-      btnUpdate = new JButton("º¯°æ");
-      btnReturn = new JButton("¹ÝÈ¯");
-      btnRent = new JButton("´ë¿©");
-      btnRequest = new JButton("¼ö¸®¿äÃ»");
+      btnInput = new JButton("ìž…ë ¥");
+      btnDelete = new JButton("ì‚­ì œ");
+      btnUpdate = new JButton("ë³€ê²½");
+      btnReturn = new JButton("ë°˜í™˜");
+      btnRent = new JButton("ëŒ€ì—¬");
+      btnRequest = new JButton("ìˆ˜ë¦¬ìš”ì²­");
    }
 
    void update() {
