@@ -53,7 +53,7 @@ public class CarRentGUI extends JFrame implements ActionListener, MouseListener 
 
 	public CarRentGUI() {
 		super("");
-		System.out.println("신민경");
+		System.out.println("문해기");
 		init();
 		connDB();
 		initDB();
