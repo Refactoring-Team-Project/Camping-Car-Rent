@@ -38,7 +38,7 @@ public class CarRentGUI extends JFrame implements ActionListener, MouseListener 
 	UpdatePanel updatePanel;
 	ButtonPanel buttonPanel;
 	int table = 0;
-	int user = 0; // 0Àº °ü¸®ÀÚ 1Àº »ç¿ëÀÚ
+	int user = 0; // 0ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 1ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
 	int curRow = -1, curCol = -1;
 
 	Connection conn;
@@ -53,6 +53,7 @@ public class CarRentGUI extends JFrame implements ActionListener, MouseListener 
 
 	public CarRentGUI() {
 		super("");
+		System.out.println("ë¬¸í•´ê¸°");
 		init();
 		connDB();
 		initDB();
@@ -64,8 +65,8 @@ public class CarRentGUI extends JFrame implements ActionListener, MouseListener 
 	public void init() {
 		super.setLayout(new FlowLayout());
 
-		/* »ç¿ëÀÚ °ü¸®ÀÚ ÀüÈ¯ panel */
-		btnUser = new JButton("°ü¸®ÀÚ");
+		/* ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È¯ panel */
+		btnUser = new JButton("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 		userPanel = new JPanel();
 		userPanel.add(btnUser);
 		add(userPanel);
@@ -78,13 +79,13 @@ public class CarRentGUI extends JFrame implements ActionListener, MouseListener 
 		btnRentCar = new JButton("Rent_Car");
 		btnCarCheck = new JButton("Car_Check");
 		btnRepairList = new JButton("Repair_List");
-		btnSearch1 = new JButton("°Ë»ö1");
-		btnSearch2 = new JButton("°Ë»ö2");
-		btnSearch3 = new JButton("°Ë»ö3");
-		btnSearch4 = new JButton("°Ë»ö4");
+		btnSearch1 = new JButton("ï¿½Ë»ï¿½1");
+		btnSearch2 = new JButton("ï¿½Ë»ï¿½2");
+		btnSearch3 = new JButton("ï¿½Ë»ï¿½3");
+		btnSearch4 = new JButton("ï¿½Ë»ï¿½4");
 
-		btnInput = new JButton("ÀÔ·Â");
-		btnReset = new JButton("ÃÊ±âÈ­");
+		btnInput = new JButton("ï¿½Ô·ï¿½");
+		btnReset = new JButton("ï¿½Ê±ï¿½È­");
 
 		txtResult = new JTextArea();
 		txtResult.setEditable(false);
@@ -110,10 +111,10 @@ public class CarRentGUI extends JFrame implements ActionListener, MouseListener 
 		pn1.add(btnSearch4);
 		pn1.add(btnReset);
 
-		btnRentList = new JButton("Camping_Car(´ë¿©°¡´É)");
-		btnUser_Search1 = new JButton("°Ë»ö1");
-		btnUser_Search2 = new JButton("°Ë»ö2");
-		btnUser_Search3 = new JButton("°Ë»ö3");
+		btnRentList = new JButton("Camping_Car(ï¿½ë¿©ï¿½ï¿½ï¿½ï¿½)");
+		btnUser_Search1 = new JButton("ï¿½Ë»ï¿½1");
+		btnUser_Search2 = new JButton("ï¿½Ë»ï¿½2");
+		btnUser_Search3 = new JButton("ï¿½Ë»ï¿½3");
 		pn2 = new JPanel();
 		pn2.add(btnRentList);
 		pn2.add(btnUser_Search1);
@@ -292,21 +293,21 @@ public class CarRentGUI extends JFrame implements ActionListener, MouseListener 
 
 		ArrayList<String> sql = new ArrayList<String>();
 
-		sql.add("insert into camping_company value(1,\"abcÄÄÆÛ´Ï\",\"¼­¿ïÆ¯º°½Ã °­¼­±¸ ¿°Ã¢µ¿\",\"010-1234-0987\",\"±èÁø¾Æ\",\"jina@naver.com\");");
-		sql.add("insert into camping_company value(2,\"´º¿¡ÀÌÁö\",\"ÀÎÃµ±¤¿ª½Ã ¿¬¼ö±¸ ¼Ûµµµ¿\",\"010-4322-2354\",\"ÀÌ¿ìÁø\",\"woojin@naver.com\");");
-		sql.add("insert into camping_company value(3,\"paperÄÄÆÛ´Ï\",\"°æ±âµµ ÇÁ¶óÇÏ½Ã\",\"010-2134-2343\",\"±èÀÌ³ª\",\"inna@naver.com\");");
-		sql.add("insert into camping_company value(4,\"ÄÝ¹ÌÄÄÆÛ´Ï\",\"°æ±âµµ ¼ö¿ø½Ã\",\"010-3426-8754\",\"¼ÛÁÖ¿ì\",\"juwo@naver.com\");");
-		sql.add("insert into camping_company value(5,\"´º¿øÄÄÆÛ´Ï\",\"Á¦ÁÖÆ¯º°½Ã Á¦ÁÖµ¿\",\"010-1237-4367\",\"¾ÈÁö¾Æ\",\"jia@naver.com\");");
-		sql.add("insert into camping_company value(6,\"¹«»ç°íÄÄÆÛ´Ï\",\"´ëÀü±¤¿ª½Ã ³ëÀëµ¿\",\"010-2148-6534\",\"¿À¾Æ³ª\",\"ana@naver.com\");");
-		sql.add("insert into camping_company value(7,\"»ç¶ûÄÄÆÛ´Ï\",\"°­¿øµµ »ïÃ´½Ã µ¿Ãáµ¿\",\"010-2363-3126\",\"ÁÖºñ\",\"rain@yahoo.com\");");
-		sql.add("insert into camping_company value(8,\"Á¦ÁÖ·»Æ®\",\"°­¿øµµ ÃáÃµ½Ã Àá½Çµ¿\",\"010-2354-2342\",\"¸¶¼º¹Î\",\"sungmin@gmail.com\");");
-		sql.add("insert into camping_company value(9,\"ºí¶óµðÄÄÆÛ´Ï\",\"¼­¿ïÆ¯º°½Ã ±¤Áø±¸ ¼¼Á¾µ¿\",\"010-2137-3478\",\"¼­Áö¾Æ\",\"jia123@naver.com\");");
-		sql.add("insert into camping_company value(10,\"¿ÀÈ£·»Æ®\",\"¼­¿ïÆ¯º°½Ã °­³²µ¿ °Ç´ëµ¿\",\"010-2138-4326\",\"ÀÓÇÏ¸®\",\"hari@naver.com\");");
-		sql.add("insert into camping_company value(11,\"ÁÖÁöÄÄÆÛ´Ï\",\"ºÎ»ê±¤¿ª½Ã ÇØ¿î´ë±¸\",\"010-8738-4347\",\"ÁÖ¿ìÁÖ\",\"blackhole@naver.com\");");
-		sql.add("insert into camping_company value(12,\"¾Æ¿¡·»Æ®\",\"ºÎ»ê±¤¿ª½Ã ¸ñÆ÷±¸\",\"010-1238-5643\",\"ÀÌÁø¾Æ\",\"jinna@gmail.com\");");
-		sql.add("insert into camping_company value(13,\"¿ÀÀÌ·»Æ®\",\"¼­¿ïÆ¯º°½Ã ´º¿å±¸\",\"010-6574-2346\",\"±è¼ºÈÆ\",\"sunghun1998@naver.com\");");
-		sql.add("insert into camping_company value(14,\"¿øÃò·»Æ®\",\"¼­¿ïÆ¯º°½Ã Ä¶¸®Æ÷´Ï¾ÆÁÖ\",\"010-3246-2745\",\"±èÈ¿°æ\",\"hyo@naver.com\");");
-		sql.add("insert into camping_company value(15,\"Ãß³ë·»Æ®\",\"ÀÎÃµ±¤¿ª½Ã ¸»¸®ºÎµ¿\",\"010-2316-1235\",\"ÀÌ¿ì½Ä\",\"sik@naver.com\");");
+		sql.add("insert into camping_company value(1,\"abcï¿½ï¿½ï¿½Û´ï¿½\",\"ï¿½ï¿½ï¿½ï¿½Æ¯ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¢ï¿½ï¿½\",\"010-1234-0987\",\"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\",\"jina@naver.com\");");
+		sql.add("insert into camping_company value(2,\"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\",\"ï¿½ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ûµï¿½ï¿½ï¿½\",\"010-4322-2354\",\"ï¿½Ì¿ï¿½ï¿½ï¿½\",\"woojin@naver.com\");");
+		sql.add("insert into camping_company value(3,\"paperï¿½ï¿½ï¿½Û´ï¿½\",\"ï¿½ï¿½âµµ ï¿½ï¿½ï¿½ï¿½ï¿½Ï½ï¿½\",\"010-2134-2343\",\"ï¿½ï¿½ï¿½Ì³ï¿½\",\"inna@naver.com\");");
+		sql.add("insert into camping_company value(4,\"ï¿½Ý¹ï¿½ï¿½ï¿½ï¿½Û´ï¿½\",\"ï¿½ï¿½âµµ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\",\"010-3426-8754\",\"ï¿½ï¿½ï¿½Ö¿ï¿½\",\"juwo@naver.com\");");
+		sql.add("insert into camping_company value(5,\"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Û´ï¿½\",\"ï¿½ï¿½ï¿½ï¿½Æ¯ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Öµï¿½\",\"010-1237-4367\",\"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\",\"jia@naver.com\");");
+		sql.add("insert into camping_company value(6,\"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Û´ï¿½\",\"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ëµ¿\",\"010-2148-6534\",\"ï¿½ï¿½ï¿½Æ³ï¿½\",\"ana@naver.com\");");
+		sql.add("insert into camping_company value(7,\"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Û´ï¿½\",\"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã´ï¿½ï¿½ ï¿½ï¿½ï¿½áµ¿\",\"010-2363-3126\",\"ï¿½Öºï¿½\",\"rain@yahoo.com\");");
+		sql.add("insert into camping_company value(8,\"ï¿½ï¿½ï¿½Ö·ï¿½Æ®\",\"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ãµï¿½ï¿½ ï¿½ï¿½Çµï¿½\",\"010-2354-2342\",\"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\",\"sungmin@gmail.com\");");
+		sql.add("insert into camping_company value(9,\"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Û´ï¿½\",\"ï¿½ï¿½ï¿½ï¿½Æ¯ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\",\"010-2137-3478\",\"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\",\"jia123@naver.com\");");
+		sql.add("insert into camping_company value(10,\"ï¿½ï¿½È£ï¿½ï¿½Æ®\",\"ï¿½ï¿½ï¿½ï¿½Æ¯ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç´ëµ¿\",\"010-2138-4326\",\"ï¿½ï¿½ï¿½Ï¸ï¿½\",\"hari@naver.com\");");
+		sql.add("insert into camping_company value(11,\"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Û´ï¿½\",\"ï¿½Î»ê±¤ï¿½ï¿½ï¿½ï¿½ ï¿½Ø¿ï¿½ë±¸\",\"010-8738-4347\",\"ï¿½Ö¿ï¿½ï¿½ï¿½\",\"blackhole@naver.com\");");
+		sql.add("insert into camping_company value(12,\"ï¿½Æ¿ï¿½ï¿½ï¿½Æ®\",\"ï¿½Î»ê±¤ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\",\"010-1238-5643\",\"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\",\"jinna@gmail.com\");");
+		sql.add("insert into camping_company value(13,\"ï¿½ï¿½ï¿½Ì·ï¿½Æ®\",\"ï¿½ï¿½ï¿½ï¿½Æ¯ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½å±¸\",\"010-6574-2346\",\"ï¿½è¼ºï¿½ï¿½\",\"sunghun1998@naver.com\");");
+		sql.add("insert into camping_company value(14,\"ï¿½ï¿½ï¿½ï¿½Æ®\",\"ï¿½ï¿½ï¿½ï¿½Æ¯ï¿½ï¿½ï¿½ï¿½ Ä¶ï¿½ï¿½ï¿½ï¿½ï¿½Ï¾ï¿½ï¿½ï¿½\",\"010-3246-2745\",\"ï¿½ï¿½È¿ï¿½ï¿½\",\"hyo@naver.com\");");
+		sql.add("insert into camping_company value(15,\"ï¿½ß³ë·»Æ®\",\"ï¿½ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Îµï¿½\",\"010-2316-1235\",\"ï¿½Ì¿ï¿½ï¿½\",\"sik@naver.com\");");
 
 		for (String s : sql) {
 			try {
@@ -319,21 +320,21 @@ public class CarRentGUI extends JFrame implements ActionListener, MouseListener 
 
 		sql.clear();
 
-		sql.add("insert into camping_car values(1,\"ºØºØÀÌ\",3241,6,\"Çö´ë\",2010,18000,70000,3,\"2012-12-02\");");
-		sql.add("insert into camping_car values(2,\"¾Å¾ÅÀÌ\",2312,4,\"Çö´ë\",2011,20000,60000,1,\"2012-11-21\");");
-		sql.add("insert into camping_car values(3,\"ÇÏ¿ì¿ì\",7653,2,\"±â¾Æ\",2012,10000,60000,2,\"2013-03-02\");");
-		sql.add("insert into camping_car values(4,\"Æ¼¿¥¾ÆÀÌ\",1234,8,\"Æ÷¸£½¦\",2010,12000,80000,6,\"2014-9-2\");");
-		sql.add("insert into camping_car values(5,\"À¸¸£··\",9384,8,\"±â¾Æ\",2014,6000,60000,7,\"2015-2-3\");");
-		sql.add("insert into camping_car values(6,\"È£¶ûÀÌ\",4673,6,\"Çö´ë\",2012,12000,120000,5,\"2015-4-5\");");
-		sql.add("insert into camping_car values(7,\"ÄÚ³¢¸®\",3924,4,\"Æø½º¹Ù°Õ\",2013,20000,90000,9,\"2014-7-4\");");
-		sql.add("insert into camping_car values(8,\"»ó¾î\",9863,4,\"¸£³ë\",2011,3000,70000,11,\"2012-4-3\");");
-		sql.add("insert into camping_car values(9,\"±â¸°\",1324,6,\"¶÷º¸¸£±â´Ï\",2009,7000,60000,1,\"2012-12-1\");");
-		sql.add("insert into camping_car values(10,\"¶÷º¸¸£±â´Ï\",4353,7,\"Æ÷¸£½¦\",2009,8000,80000,2,\"2011-2-3\");");
-		sql.add("insert into camping_car values(11,\"¿µ´öÀÌ\",1235,9,\"Çö´ë\",2014,20000,70000,3,\"2017-2-5\");");
-		sql.add("insert into camping_car values(12,\"¹Ú½ºÂ÷\",4732,6,\"´Ö»ê\",2016,3000,80000,1,\"2018-12-3\");");
-		sql.add("insert into camping_car values(13,\"·¹ÀÌ\",3627,4,\"È¥´Ù\",2010,21000,90000,14,\"2011-12-3\");");
-		sql.add("insert into camping_car values(14,\"¾Æ¹Ý¶¼\",3843,2,\"BMW\",2010,13000,110000,2,\"2011-4-7\");");
-		sql.add("insert into camping_car values(15,\"¼Ò³ªÅ¸\",4273,7,\"±â¾Æ\",2008,14000,90000,3,\"2010-4-5\");");
+		sql.add("insert into camping_car values(1,\"ï¿½Øºï¿½ï¿½ï¿½\",3241,6,\"ï¿½ï¿½ï¿½ï¿½\",2010,18000,70000,3,\"2012-12-02\");");
+		sql.add("insert into camping_car values(2,\"ï¿½Å¾ï¿½ï¿½ï¿½\",2312,4,\"ï¿½ï¿½ï¿½ï¿½\",2011,20000,60000,1,\"2012-11-21\");");
+		sql.add("insert into camping_car values(3,\"ï¿½Ï¿ï¿½ï¿½\",7653,2,\"ï¿½ï¿½ï¿½\",2012,10000,60000,2,\"2013-03-02\");");
+		sql.add("insert into camping_car values(4,\"Æ¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\",1234,8,\"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\",2010,12000,80000,6,\"2014-9-2\");");
+		sql.add("insert into camping_car values(5,\"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\",9384,8,\"ï¿½ï¿½ï¿½\",2014,6000,60000,7,\"2015-2-3\");");
+		sql.add("insert into camping_car values(6,\"È£ï¿½ï¿½ï¿½ï¿½\",4673,6,\"ï¿½ï¿½ï¿½ï¿½\",2012,12000,120000,5,\"2015-4-5\");");
+		sql.add("insert into camping_car values(7,\"ï¿½Ú³ï¿½ï¿½ï¿½\",3924,4,\"ï¿½ï¿½ï¿½ï¿½ï¿½Ù°ï¿½\",2013,20000,90000,9,\"2014-7-4\");");
+		sql.add("insert into camping_car values(8,\"ï¿½ï¿½ï¿½\",9863,4,\"ï¿½ï¿½ï¿½ï¿½\",2011,3000,70000,11,\"2012-4-3\");");
+		sql.add("insert into camping_car values(9,\"ï¿½â¸°\",1324,6,\"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\",2009,7000,60000,1,\"2012-12-1\");");
+		sql.add("insert into camping_car values(10,\"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\",4353,7,\"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\",2009,8000,80000,2,\"2011-2-3\");");
+		sql.add("insert into camping_car values(11,\"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\",1235,9,\"ï¿½ï¿½ï¿½ï¿½\",2014,20000,70000,3,\"2017-2-5\");");
+		sql.add("insert into camping_car values(12,\"ï¿½Ú½ï¿½ï¿½ï¿½\",4732,6,\"ï¿½Ö»ï¿½\",2016,3000,80000,1,\"2018-12-3\");");
+		sql.add("insert into camping_car values(13,\"ï¿½ï¿½ï¿½ï¿½\",3627,4,\"È¥ï¿½ï¿½\",2010,21000,90000,14,\"2011-12-3\");");
+		sql.add("insert into camping_car values(14,\"ï¿½Æ¹Ý¶ï¿½\",3843,2,\"BMW\",2010,13000,110000,2,\"2011-4-7\");");
+		sql.add("insert into camping_car values(15,\"ï¿½Ò³ï¿½Å¸\",4273,7,\"ï¿½ï¿½ï¿½\",2008,14000,90000,3,\"2010-4-5\");");
 
 		try {
 			stmt = conn.createStatement();
@@ -346,21 +347,21 @@ public class CarRentGUI extends JFrame implements ActionListener, MouseListener 
 		}
 		sql.clear();
 
-		sql.add("insert into Rent_Customer value(1,\"±è¼ºÈÆ\",\"ÀÎÃµ±¤¿ª½Ã ¿¬¼ö±¸ ¼Ûµµµ¿\",\"010-9657-8412\",\"sunghun1998@naver.com\");");
-		sql.add("insert into Rent_Customer value(2,\"±èÈ¿°æ\",\"¼­¿ïÆ¯º°½Ã ¼ºµ¿±¸ ´º¿åµ¿\",\"010-1234-1234\",\"hyobbang@naver.com\");");
-		sql.add("insert into Rent_Customer value(3,\"ÀÌ¿ì½Ä\",\"°­¿øµµ »ïÃ´½Ã\",\"010-3246-4321\",\"sik@naver.com\");");
-		sql.add("insert into Rent_Customer value(4,\"ÀÌÁø¾Æ\",\"¼­¿ïÆ¯º°½Ã ¿¤¿¡ÀÌÁÖ\",\"010-1237-4363\",\"jinna@naver.com\");");
-		sql.add("insert into Rent_Customer value(5,\"¿ì¸®³ª\",\"ÀÎÃµ±¤¿ª½Ã ¿ÀÇÏÀÌ¿ÀÁÖ\",\"010-2365-4364\",\"rina@naver.com\");");
-		sql.add("insert into Rent_Customer value(6,\"È²¼ÒÁø\",\"ÀÎÃµ±¤¿ª½Ã ¹Ì½Ã°£ÁÖ\",\"010-2374-3765\",\"sojin@naver.com\");");
-		sql.add("insert into Rent_Customer value(7,\"¿ì¾Æ³ª\",\"¼­¿ïÆ¯º°½Ã µµÄì±¸\",\"010-2378-3263\",\"anaa@naver.com\");");
-		sql.add("insert into Rent_Customer value(8,\"ÇÏ³ª°æ\",\"Á¦ÁÖÆ¯º°½Ã °¨±ÖÁÖ\",\"010-4263-4364\",\"nakyung@yahoo.com\");");
-		sql.add("insert into Rent_Customer value(9,\"ÀÌ¹ÎÁö\",\"´ëÀü±¤¿ª½Ã ¼öÁ¤±¸\",\"010-4236-3263\",\"minji@naver.com\");");
-		sql.add("insert into Rent_Customer value(10,\"ÀÌ¼ÒÁø\",\"ºÎ»ê±¤¿ª½Ã ÇØ¿î´ë±¸\",\"010-4327-3425\",\"sojin@gmail.com\");");
-		sql.add("insert into Rent_Customer value(11,\"Àå±¤Áø\",\"±¤ÁÖ±¤¿ª½Ã ±â¾Æµ¿\",\"010-3248-3474\",\"gang@naver.com\");");
-		sql.add("insert into Rent_Customer value(12,\"±èÀÚ¾Æ\",\"°æ»óºÏµµ Ã¢¿ø½Ã\",\"010-2348-7543\",\"jaa@gmail.com\");");
-		sql.add("insert into Rent_Customer value(13,\"ºòºñºò\",\"°æ±âµµ ¼ö¿ø½Ã\",\"010-4328-5465\",\"bibibik@naver.com\");");
-		sql.add("insert into Rent_Customer value(14,\"ÁøÁø¾Æ\",\"°æ±âµµ °úÃµ½Ã\",\"010-3248-4374\",\"jinjin@naver.com\");");
-		sql.add("insert into Rent_Customer value(15,\"³ëÁø±¸\",\"°­¿øµµ µ¿ÇØ½Ã\",\"010-3428-4537\",\"jingu@yahoo.com\");");
+		sql.add("insert into Rent_Customer value(1,\"ï¿½è¼ºï¿½ï¿½\",\"ï¿½ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ûµï¿½ï¿½ï¿½\",\"010-9657-8412\",\"sunghun1998@naver.com\");");
+		sql.add("insert into Rent_Customer value(2,\"ï¿½ï¿½È¿ï¿½ï¿½\",\"ï¿½ï¿½ï¿½ï¿½Æ¯ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½åµ¿\",\"010-1234-1234\",\"hyobbang@naver.com\");");
+		sql.add("insert into Rent_Customer value(3,\"ï¿½Ì¿ï¿½ï¿½\",\"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã´ï¿½ï¿½\",\"010-3246-4321\",\"sik@naver.com\");");
+		sql.add("insert into Rent_Customer value(4,\"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\",\"ï¿½ï¿½ï¿½ï¿½Æ¯ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\",\"010-1237-4363\",\"jinna@naver.com\");");
+		sql.add("insert into Rent_Customer value(5,\"ï¿½ì¸®ï¿½ï¿½\",\"ï¿½ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì¿ï¿½ï¿½ï¿½\",\"010-2365-4364\",\"rina@naver.com\");");
+		sql.add("insert into Rent_Customer value(6,\"È²ï¿½ï¿½ï¿½ï¿½\",\"ï¿½ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ì½Ã°ï¿½ï¿½ï¿½\",\"010-2374-3765\",\"sojin@naver.com\");");
+		sql.add("insert into Rent_Customer value(7,\"ï¿½ï¿½Æ³ï¿½\",\"ï¿½ï¿½ï¿½ï¿½Æ¯ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ì±¸\",\"010-2378-3263\",\"anaa@naver.com\");");
+		sql.add("insert into Rent_Customer value(8,\"ï¿½Ï³ï¿½ï¿½ï¿½\",\"ï¿½ï¿½ï¿½ï¿½Æ¯ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\",\"010-4263-4364\",\"nakyung@yahoo.com\");");
+		sql.add("insert into Rent_Customer value(9,\"ï¿½Ì¹ï¿½ï¿½ï¿½\",\"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\",\"010-4236-3263\",\"minji@naver.com\");");
+		sql.add("insert into Rent_Customer value(10,\"ï¿½Ì¼ï¿½ï¿½ï¿½\",\"ï¿½Î»ê±¤ï¿½ï¿½ï¿½ï¿½ ï¿½Ø¿ï¿½ë±¸\",\"010-4327-3425\",\"sojin@gmail.com\");");
+		sql.add("insert into Rent_Customer value(11,\"ï¿½å±¤ï¿½ï¿½\",\"ï¿½ï¿½ï¿½Ö±ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æµï¿½\",\"010-3248-3474\",\"gang@naver.com\");");
+		sql.add("insert into Rent_Customer value(12,\"ï¿½ï¿½ï¿½Ú¾ï¿½\",\"ï¿½ï¿½ï¿½Ïµï¿½ Ã¢ï¿½ï¿½ï¿½ï¿½\",\"010-2348-7543\",\"jaa@gmail.com\");");
+		sql.add("insert into Rent_Customer value(13,\"ï¿½ï¿½ï¿½ï¿½\",\"ï¿½ï¿½âµµ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\",\"010-4328-5465\",\"bibibik@naver.com\");");
+		sql.add("insert into Rent_Customer value(14,\"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\",\"ï¿½ï¿½âµµ ï¿½ï¿½Ãµï¿½ï¿½\",\"010-3248-4374\",\"jinjin@naver.com\");");
+		sql.add("insert into Rent_Customer value(15,\"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\",\"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ø½ï¿½\",\"010-3428-4537\",\"jingu@yahoo.com\");");
 
 		try {
 			stmt = conn.createStatement();
@@ -374,25 +375,25 @@ public class CarRentGUI extends JFrame implements ActionListener, MouseListener 
 		sql.clear();
 
 		sql.add("insert into Car_Rent values(1,1,4,3,\"2019-1-23\",3,180000,\"2019-2-1\", \"X\",0);");
-		sql.add("insert into Car_Rent values(2,15,3,3,\"2019-8-2\",4,220000,\"2019-8-11\",\"À¯·ùºñ\",20000);");
+		sql.add("insert into Car_Rent values(2,15,3,3,\"2019-8-2\",4,220000,\"2019-8-11\",\"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\",20000);");
 		sql.add("insert into Car_Rent values(3,14,5,2,\"2019-4-3\",2,120000,\"2019-4-16\",\"X\",0);");
-		sql.add("insert into Car_Rent values(4,14,11,2,\"2019-5-2\",3,150000,\"2019-5-17\",\"»ç°í\",200000);");
-		sql.add("insert into Car_Rent values(5,8,1,11,\"2019-3-1\",1,70000,\"2019-3-11\",\"À¯·ùºñ\",30000);");
+		sql.add("insert into Car_Rent values(4,14,11,2,\"2019-5-2\",3,150000,\"2019-5-17\",\"ï¿½ï¿½ï¿½\",200000);");
+		sql.add("insert into Car_Rent values(5,8,1,11,\"2019-3-1\",1,70000,\"2019-3-11\",\"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\",30000);");
 		sql.add("insert into Car_Rent values(6,7,4,9,\"2019-2-22\",2,120000,\"2019-3-2\",\"X\",0);");
-		sql.add("insert into Car_Rent values(7,14,10,2,\"2019-7-5\",7,420000,\"2019-7-17\",\"°ú¼Ó\",30000);");
+		sql.add("insert into Car_Rent values(7,14,10,2,\"2019-7-5\",7,420000,\"2019-7-17\",\"ï¿½ï¿½ï¿½ï¿½\",30000);");
 		sql.add("insert into Car_Rent values(8,2,12,1,\"2018-12-22\",4,200000,\"2019-1-1\",\"X\",0);");
-		sql.add("insert into Car_Rent values(9,12,13,1,\"2019-12-20\",3,180000,\"2020-1-3\",\"¶ó¸é\",6000);");
+		sql.add("insert into Car_Rent values(9,12,13,1,\"2019-12-20\",3,180000,\"2020-1-3\",\"ï¿½ï¿½ï¿½\",6000);");
 		sql.add("insert into Car_Rent values(10,3,14,2,\"2019-11-22\",3,180000,\"2019-12-1\",\"X\",0);");
-		sql.add("insert into Car_Rent values(11,15,15,3,\"2019-6-3\",3,210000,\"2019-6-16\",\"À¯·ùºñ\",40000);");
+		sql.add("insert into Car_Rent values(11,15,15,3,\"2019-6-3\",3,210000,\"2019-6-16\",\"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\",40000);");
 		sql.add("insert into Car_Rent values(12,7,2,9,\"2020-1-22\",3,180000,\"2020-2-1\",\"X\",0);");
-		sql.add("insert into Car_Rent values(13,8,6,11,\"2019-8-21\",5,250000,\"2019-9-1\",\"¾ÆÀÌ½ºÅ©¸²\",10000);");
+		sql.add("insert into Car_Rent values(13,8,6,11,\"2019-8-21\",5,250000,\"2019-9-1\",\"ï¿½ï¿½ï¿½Ì½ï¿½Å©ï¿½ï¿½\",10000);");
 		sql.add("insert into Car_Rent values(14,11,8,3,\"2019-12-2\",3,180000,\"2019-12-11\",\"X\",0);");
 		sql.add("insert into Car_Rent values(15,5,7,2,\"2019-6-24\",2,120000,\"2019-7-1\",\"X\",0);");
 		sql.add("insert into Car_Rent values(16,6,1,5,\"2019-7-04\",3,125000,\"2019-7-10\",\"X\",0);");
-		sql.add("insert into Car_Rent values(17,3,2,2,\"2019-5-20\",5,280000,\"2019-6-1\",\"°ú¼Ó\",50000);");
+		sql.add("insert into Car_Rent values(17,3,2,2,\"2019-5-20\",5,280000,\"2019-6-1\",\"ï¿½ï¿½ï¿½ï¿½\",50000);");
 		sql.add("insert into Car_Rent values(18,13,8,14,\"2019-1-3\",2,100000,\"2019-1-15\",\"X\",0);");
 		sql.add("insert into Car_Rent values(19,11,3,3,\"2020-6-14\",6,250000,\"2020-6-30\",\"X\",0);");
-		sql.add("insert into Car_Rent values(20,9,2,1,\"2019-9-15\",8,170000,\"2019-9-21\",\"ÁÖÂ÷ºñ\",8000);");
+		sql.add("insert into Car_Rent values(20,9,2,1,\"2019-9-15\",8,170000,\"2019-9-21\",\"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\",8000);");
 		sql.add("insert into Car_Rent values(21,2,10,1,\"2020-3-17\",4,60000,\"2020-3-25\",\"X\",0);");
 
 		try {
@@ -433,21 +434,21 @@ public class CarRentGUI extends JFrame implements ActionListener, MouseListener 
 		}
 		sql.clear();
 
-		sql.add("insert into Repairshop values(1,\"¼ºÈÆÀÌ³×\",\"ÀÎÃµ±¤¿ª½Ã ¿¬¼ö±¸ ¼Ûµµµ¿\",\"02-3665-8412\",\"±è¼ºÈÆ\",\"sunghun1998@naver.com\");");
-		sql.add("insert into Repairshop values(2,\"ÇÏÀÌÄ«\",\"¼­¿ïÆ¯º°½Ã ±¤Áø±¸ ¼¼Á¾µ¿\",\"02-3242-3241\",\"ÀÌÇÏÀÌ\",\"hihi@naver.com\");");
-		sql.add("insert into Repairshop values(3,\"È¿°æÀÌ³×\",\"¼­¿ïÆ¯º°½Ã ¼ºµ¿±¸ À¾ÀÚµ¿\",\"02-3124-2435\",\"±èÈ¿°æ\",\"hyo@naver.com\");");
-		sql.add("insert into Repairshop values(4,\"¾È³ç³×\",\"´ëÀü±¤¿ª½Ã ¼öÁ¤±¸\",\"033-2343-3124\",\"¾È¾È³ç\",\"hi@naver.com\");");
-		sql.add("insert into Repairshop values(5,\"½îÄ«\",\"¼­¿ïÆ¯º°½Ã ´º¿åÁÖ\",\"02-3245-7652\",\"ÀÌÁöÈÆ\",\"jihuuun@naver.com\");");
-		sql.add("insert into Repairshop values(6,\"µå·´´õºñÆ®\",\"ÀÎÃµ±¤¿ª½Ã ÇÔºÎ¸£Å©µ¿\",\"032-2146-3859\",\"±èºñÆ®\",\"raper@naver.com\");");
-		sql.add("insert into Repairshop values(7,\"»ï¼ºÂ÷\",\"±¤ÁÖ±¤¿ª½Ã ºÐ´ç±¸\",\"023-4223-3584\",\"ÀÌ»ï¼º\",\"samsung@naver.com\");");
-		sql.add("insert into Repairshop values(8,\"ÅëÅ«ÀÌ³×\",\"¼­¿ïÆ¯º°½Ã ¹ãº£¸£Å©\",\"02-2343-7659\",\"ÀÌ·ç¸¶\",\"luma@naver.com\");");
-		sql.add("insert into Repairshop values(9,\"Çö´ëÇØ»ó\",\"¼­¿ïÆ¯º°½Ã ÇÏÀÌµ¨º£¸£Å©\",\"02-3246-2355\",\"±ÝÁöÈÆ\",\"jihun@naver.com\");");
-		sql.add("insert into Repairshop values(10,\"¸¶ÀÌµðºñ\",\"°­¿øµµ »ïÃ´½Ã ±¤¾î\",\"033-2378-4537\",\"±èµðºñ\",\"dibi@naver.com\");");
-		sql.add("insert into Repairshop values(11,\"¼¼Á¾Ä«\",\"°­¿øµµ ¼ÓÃÊ½Ã ÀÚ°¥Ä¡\",\"033-4326-7444\",\"ÀÌ¼¼Á¾\",\"sejong@naver.com\");");
-		sql.add("insert into Repairshop values(12,\"ºê·Îµé\",\"ºÎ»ê±¤¿ª½Ã ºß¸£Ã÷ºÎ¸£Å©\",\"030-3246-4326\",\"¿ëºê·Î\",\"bro@naver.com\");");
-		sql.add("insert into Repairshop values(13,\"±ú²ýÇÑºê·Î\",\"Àü¶ó³²µµ ÇÁ¶óÇÏ½Ã\",\"031-2345-6532\",\"ÇÏÀÌ·ç\",\"hiroo@naver.com\");");
-		sql.add("insert into Repairshop values(14,\"ÀÌµð¾ß³×\",\"°æ»óºÏµµ º£¸¦¸°\",\"021-4324-4533\",\"ÀÌµò¾ß\",\"dinya@yahoo.com\");");
-		sql.add("insert into Repairshop values(15,\"¿À´Ã³»ÀÏ\",\"°æ»ó³²µµ ºê·¹¸à\",\"055-3324-3423\",\"ÀÌÅõ¸¶·Î\",\"tomorrow@naver.com\");");
+		sql.add("insert into Repairshop values(1,\"ï¿½ï¿½ï¿½ï¿½ï¿½Ì³ï¿½\",\"ï¿½ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ûµï¿½ï¿½ï¿½\",\"02-3665-8412\",\"ï¿½è¼ºï¿½ï¿½\",\"sunghun1998@naver.com\");");
+		sql.add("insert into Repairshop values(2,\"ï¿½ï¿½ï¿½ï¿½Ä«\",\"ï¿½ï¿½ï¿½ï¿½Æ¯ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\",\"02-3242-3241\",\"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\",\"hihi@naver.com\");");
+		sql.add("insert into Repairshop values(3,\"È¿ï¿½ï¿½ï¿½Ì³ï¿½\",\"ï¿½ï¿½ï¿½ï¿½Æ¯ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Úµï¿½\",\"02-3124-2435\",\"ï¿½ï¿½È¿ï¿½ï¿½\",\"hyo@naver.com\");");
+		sql.add("insert into Repairshop values(4,\"ï¿½È³ï¿½ï¿½\",\"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\",\"033-2343-3124\",\"ï¿½È¾È³ï¿½\",\"hi@naver.com\");");
+		sql.add("insert into Repairshop values(5,\"ï¿½ï¿½Ä«\",\"ï¿½ï¿½ï¿½ï¿½Æ¯ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\",\"02-3245-7652\",\"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\",\"jihuuun@naver.com\");");
+		sql.add("insert into Repairshop values(6,\"ï¿½å·´ï¿½ï¿½ï¿½ï¿½Æ®\",\"ï¿½ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ÔºÎ¸ï¿½Å©ï¿½ï¿½\",\"032-2146-3859\",\"ï¿½ï¿½ï¿½Æ®\",\"raper@naver.com\");");
+		sql.add("insert into Repairshop values(7,\"ï¿½ï¼ºï¿½ï¿½\",\"ï¿½ï¿½ï¿½Ö±ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ð´ç±¸\",\"023-4223-3584\",\"ï¿½Ì»ï¼º\",\"samsung@naver.com\");");
+		sql.add("insert into Repairshop values(8,\"ï¿½ï¿½Å«ï¿½Ì³ï¿½\",\"ï¿½ï¿½ï¿½ï¿½Æ¯ï¿½ï¿½ï¿½ï¿½ ï¿½ãº£ï¿½ï¿½Å©\",\"02-2343-7659\",\"ï¿½Ì·ç¸¶\",\"luma@naver.com\");");
+		sql.add("insert into Repairshop values(9,\"ï¿½ï¿½ï¿½ï¿½ï¿½Ø»ï¿½\",\"ï¿½ï¿½ï¿½ï¿½Æ¯ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìµï¿½ï¿½ï¿½ï¿½ï¿½Å©\",\"02-3246-2355\",\"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\",\"jihun@naver.com\");");
+		sql.add("insert into Repairshop values(10,\"ï¿½ï¿½ï¿½Ìµï¿½ï¿½\",\"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã´ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½\",\"033-2378-4537\",\"ï¿½ï¿½ï¿½ï¿½\",\"dibi@naver.com\");");
+		sql.add("insert into Repairshop values(11,\"ï¿½ï¿½ï¿½ï¿½Ä«\",\"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ê½ï¿½ ï¿½Ú°ï¿½Ä¡\",\"033-4326-7444\",\"ï¿½Ì¼ï¿½ï¿½ï¿½\",\"sejong@naver.com\");");
+		sql.add("insert into Repairshop values(12,\"ï¿½ï¿½Îµï¿½\",\"ï¿½Î»ê±¤ï¿½ï¿½ï¿½ï¿½ ï¿½ß¸ï¿½ï¿½ï¿½ï¿½Î¸ï¿½Å©\",\"030-3246-4326\",\"ï¿½ï¿½ï¿½ï¿½\",\"bro@naver.com\");");
+		sql.add("insert into Repairshop values(13,\"ï¿½ï¿½ï¿½ï¿½ï¿½Ñºï¿½ï¿½\",\"ï¿½ï¿½ï¿½ó³²µï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï½ï¿½\",\"031-2345-6532\",\"ï¿½ï¿½ï¿½Ì·ï¿½\",\"hiroo@naver.com\");");
+		sql.add("insert into Repairshop values(14,\"ï¿½Ìµï¿½ß³ï¿½\",\"ï¿½ï¿½ï¿½Ïµï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\",\"021-4324-4533\",\"ï¿½Ìµï¿½ï¿½\",\"dinya@yahoo.com\");");
+		sql.add("insert into Repairshop values(15,\"ï¿½ï¿½ï¿½Ã³ï¿½ï¿½ï¿½\",\"ï¿½ï¿½ó³²µï¿½ ï¿½ê·¹ï¿½ï¿½\",\"055-3324-3423\",\"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½\",\"tomorrow@naver.com\");");
 
 		try {
 			stmt = conn.createStatement();
@@ -494,16 +495,16 @@ public class CarRentGUI extends JFrame implements ActionListener, MouseListener 
 	}
 
 	public void connDB() {
-		try { // µå¶óÀÌ¹ö ·Îµå
+		try { // ï¿½ï¿½ï¿½ï¿½Ì¹ï¿½ ï¿½Îµï¿½
 			Class.forName(Driver);
-			System.out.println("µå¶óÀÌ¹ö ·Îµå ¿Ï·á");
+			System.out.println("ï¿½ï¿½ï¿½ï¿½Ì¹ï¿½ ï¿½Îµï¿½ ï¿½Ï·ï¿½");
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
 
-		try { // µ¥ÀÌÅÍº£ÀÌ½º ¿¬°á
+		try { // ï¿½ï¿½ï¿½ï¿½ï¿½Íºï¿½ï¿½Ì½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			conn = DriverManager.getConnection(url, userid, pwd);
-			System.out.println("µ¥ÀÌÅÍº£ÀÌ½º ¿¬°á ¿Ï·á");
+			System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½Íºï¿½ï¿½Ì½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ï·ï¿½");
 			updatePanel.conn = conn;
 		} catch (SQLException e1) {
 			e1.printStackTrace();
@@ -512,10 +513,10 @@ public class CarRentGUI extends JFrame implements ActionListener, MouseListener 
 	}
 
 	public void closeDB() {
-		try { // µ¥ÀÌÅÍº£ÀÌ½º ¿¬°á Á¾·á
+		try { // ï¿½ï¿½ï¿½ï¿½ï¿½Íºï¿½ï¿½Ì½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 			if (conn != null) {
 				conn.close();
-				System.out.println("µ¥ÀÌÅÍº£ÀÌ½º ¿¬°á Á¾·á");
+				System.out.println("ï¿½ï¿½ï¿½ï¿½ï¿½Íºï¿½ï¿½Ì½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½");
 			}
 		} catch (Exception e3) {
 			e3.printStackTrace();
@@ -528,7 +529,7 @@ public class CarRentGUI extends JFrame implements ActionListener, MouseListener 
 			curRow = -1;
 			curCol = -1;
 			if (user == 0) {
-				btnUser.setText("»ç¿ëÀÚ");
+				btnUser.setText("ï¿½ï¿½ï¿½ï¿½ï¿½");
 				remove(pn1);
 				add(pn2, 1);
 				user = 1;
@@ -537,7 +538,7 @@ public class CarRentGUI extends JFrame implements ActionListener, MouseListener 
 				updatePanel.removeAll();
 				buttonPanel.removeAll();
 			} else if (user == 1) {
-				btnUser.setText("°ü¸®ÀÚ");
+				btnUser.setText("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½");
 				remove(pn2);
 				add(pn1, 1);
 				user = 0;
@@ -794,17 +795,17 @@ public class CarRentGUI extends JFrame implements ActionListener, MouseListener 
 			if (curRow != -1) {
 				updatePanel.delete(table, dbResult.getModel().getValueAt(curRow, 0));
 			} else
-				JOptionPane.showMessageDialog(null, "»èÁ¦ÇÒ µ¥ÀÌÅÍ¸¦ ¼±ÅÃÇØ ÁÖ¼¼¿ä.");
+				JOptionPane.showMessageDialog(null, "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½.");
 		} else if (e.getSource() == buttonPanel.btnUpdate) {
 			if (curRow != -1) {
 				updatePanel.update(table, dbResult.getModel().getValueAt(curRow, 0));
 			} else
-				JOptionPane.showMessageDialog(null, "º¯°æÇÒ µ¥ÀÌÅÍ¸¦ ¼±ÅÃÇØ ÁÖ¼¼¿ä.");
+				JOptionPane.showMessageDialog(null, "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½.");
 		} else if (e.getSource() == buttonPanel.btnReturn) {
 			if (curRow != -1) {
 				updatePanel.carReutrn();
 			} else
-				JOptionPane.showMessageDialog(null, "¹ÝÈ¯ÇÒ µ¥ÀÌÅÍ¸¦ ¼±ÅÃÇØ ÁÖ¼¼¿ä.");
+				JOptionPane.showMessageDialog(null, "ï¿½ï¿½È¯ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½.");
 		}
 
 		else if (e.getSource() == buttonPanel.btnRequest && dbResult.getModel().getValueAt(curRow, 6).equals("Y")) {
@@ -813,16 +814,16 @@ public class CarRentGUI extends JFrame implements ActionListener, MouseListener 
 				curRow = -1;
 				curCol = -1;
 			} else
-				JOptionPane.showMessageDialog(null, "¿äÃ»ÇÒ µ¥ÀÌÅÍ¸¦ ¼±ÅÃÇØ ÁÖ¼¼¿ä.");
+				JOptionPane.showMessageDialog(null, "ï¿½ï¿½Ã»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½.");
 		} else if (e.getSource() == buttonPanel.btnRequest && dbResult.getModel().getValueAt(curRow, 6).equals("N")) {
 
-			JOptionPane.showMessageDialog(null, "µ¥ÀÌÅÍ ¼±ÅÃÀÌ Àß¸øµÇ¾ú½À´Ï´Ù.");
+			JOptionPane.showMessageDialog(null, "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ß¸ï¿½ï¿½Ç¾ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.");
 		}
 
 		else if (e.getSource() == btnSearch1) {
 			updatePanel.removeAll();
 			buttonPanel.removeAll();
-			String input = JOptionPane.showInputDialog("¿øÇÏ´Â ³¯Â¥¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä");
+			String input = JOptionPane.showInputDialog("ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½Â¥ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö¼ï¿½ï¿½ï¿½");
 			if (input != null && (input.matches("\\d{4}-\\d{2}-\\d{2}"))) {
 				try {
 					System.out.println(input);
@@ -850,7 +851,7 @@ public class CarRentGUI extends JFrame implements ActionListener, MouseListener 
 				revalidate();
 				repaint();
 			} else
-				JOptionPane.showMessageDialog(null, "³¯Â¥Çü½Ä(yyyy-mm-dd)¸¦ ¸ÂÃç ÀÔ·ÂÇØÁÖ½Ê½Ã¿À");
+				JOptionPane.showMessageDialog(null, "ï¿½ï¿½Â¥ï¿½ï¿½ï¿½ï¿½(yyyy-mm-dd)ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ô·ï¿½ï¿½ï¿½ï¿½Ö½Ê½Ã¿ï¿½");
 
 		} else if (e.getSource() == btnSearch2) {
 			updatePanel.removeAll();
@@ -930,7 +931,7 @@ public class CarRentGUI extends JFrame implements ActionListener, MouseListener 
 			if (curRow != -1) {
 				updatePanel.carRent();
 			} else
-				JOptionPane.showMessageDialog(null, "´ë¿©È° µ¥ÀÌÅÍ¸¦ ¼±ÅÃÇØ ÁÖ¼¼¿ä.");
+				JOptionPane.showMessageDialog(null, "ï¿½ë¿©È° ï¿½ï¿½ï¿½ï¿½ï¿½Í¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ö¼ï¿½ï¿½ï¿½.");
 		} else if (e.getSource() == btnUser_Search1) {
 
 			curRow = -1;
@@ -938,7 +939,7 @@ public class CarRentGUI extends JFrame implements ActionListener, MouseListener 
 			try {
 				// updatePanel.removeAll();
 				// buttonPanel.removeAll();
-				String input = JOptionPane.showInputDialog("Max_price¸¦ ÁöÁ¤ÇÏ¼¼¿ä.");
+				String input = JOptionPane.showInputDialog("Max_priceï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¼ï¿½ï¿½ï¿½.");
 
 				String sql = "select * from Camping_car c where c.rentcost <= " + input + " and "
 						+ "c.carid not in (select r.carid from Car_Rent r "
@@ -978,7 +979,7 @@ public class CarRentGUI extends JFrame implements ActionListener, MouseListener 
 			try {
 				// updatePanel.removeAll();
 				// buttonPanel.removeAll();
-				String input = JOptionPane.showInputDialog("¸î ³â½Ä ÀÌÈÄ¸¦ ¿øÇÏ½Ã³ª¿ä?");
+				String input = JOptionPane.showInputDialog("ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ä¸ï¿½ ï¿½ï¿½ï¿½Ï½Ã³ï¿½ï¿½ï¿½?");
 
 				String sql = "select * from Camping_car c where c.manu_year >= " + input + " and "
 						+ "c.carid not in (select r.carid from Car_Rent r "
@@ -1018,7 +1019,7 @@ public class CarRentGUI extends JFrame implements ActionListener, MouseListener 
 			try {
 				// updatePanel.removeAll();
 				// buttonPanel.removeAll();
-				String input = JOptionPane.showInputDialog("ÁÖÇà°Å¸®´Â ¸î km ÀÌÇÏ¸¦ ¿øÇÏ½Ã³ª¿ä?");
+				String input = JOptionPane.showInputDialog("ï¿½ï¿½ï¿½ï¿½Å¸ï¿½ï¿½ï¿½ ï¿½ï¿½ km ï¿½ï¿½ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½Ï½Ã³ï¿½ï¿½ï¿½?");
 
 				String sql = "select * from Camping_car c where c.drivingdistance <= " + input + " and "
 						+ "c.carid not in (select r.carid from Car_Rent r "
