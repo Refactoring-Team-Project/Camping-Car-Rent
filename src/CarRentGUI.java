@@ -52,7 +52,7 @@ public class CarRentGUI extends JFrame implements ActionListener, MouseListener 
 	String pwd = "madang";
 
 	public CarRentGUI() {
-		super("");
+		super("¹®ÇØ7¤Ó");
 		init();
 		connDB();
 		initDB();
