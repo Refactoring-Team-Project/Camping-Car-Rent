@@ -2,6 +2,7 @@ package team_project;
 
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseListener;
 import java.sql.Connection;
@@ -19,12 +20,14 @@ import javax.swing.JTextArea;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
 
-public class MainView extends JFrame{
+public class MainView extends JFrame {
 	   private CampingCompanyView campCompView;
+	   private CampingCompanyController campCompController;
 	   JButton btnCampComp, btnCustomer, btnCampCar, btnRepairshop, btnRentCar, btnCarCheck,btnRepairList, btnRentList,btnSearch1,btnSearch2,btnSearch3,btnSearch4;
 	   JButton btnUser_Search1,btnUser_Search2,btnUser_Search3;
 	   JButton btnReset, btnUser;
 	   JPanel pn1, pn2, userPanel;
+	   JPanel viewPanel;
 	   int table=0;
 	   int user=0; // 0은 관리자 1은 사용자
 	   int curRow=-1, curCol=-1;
@@ -46,8 +49,10 @@ public class MainView extends JFrame{
 	      
 	      connDB();
 	      init();
-	      campCompView = new CampingCompanyView();
-	      add(campCompView);
+//	      campCompView = new CampingCompanyView();
+//	      campCompController = new CampingCompanyController();
+//	      add(campCompView);
+	      
 	      setVisible(true);
 	      setBounds(500, 200, 800, 600);
 	      setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -133,13 +138,15 @@ public class MainView extends JFrame{
 	      pn2.add(btnUser_Search3);
 
 	      add(pn1);
-	      
-
-	      
 	      /*** panel size ****/
 	      userPanel.setPreferredSize(new Dimension(780, 50));
 	      pn1.setPreferredSize(new Dimension(780, 80));
 	      pn2.setPreferredSize(new Dimension(780, 80));
 
 	   }
+	   
+	   public void addCampCompListener(ActionListener listener) {
+			btnCampComp.addActionListener(listener);
+		}
+	   
 }

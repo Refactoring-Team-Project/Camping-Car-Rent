@@ -1,5 +1,13 @@
 package team_project;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import javax.swing.table.DefaultTableModel;
+
 public class CampingCarModel {
 	int carid;
 	String carname;
@@ -12,6 +20,10 @@ public class CampingCarModel {
 	int compid;
 	String registdate;
 	
+	
+
+	
+
 	public int getCarid() {
 		return carid;
 	}

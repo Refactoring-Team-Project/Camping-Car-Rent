@@ -1,31 +1,31 @@
 package team_project;
 
 public class AppManager {
-	private static AppManager s_instance; // AppManager ìì‹ ì„ ë‚˜íƒ€ë‚´ëŠ” ë³€ìˆ˜
-	private MainView _view; // SimplePainterViewë¥¼ ê·¸ëŒ€ë¡œ ë°›ì•„ì™€ì„œ ê´€ë¦¬ í•  ë³€ìˆ˜
-	private CampingCompanyView _campingcompview; // DrawingPanelViewë¥¼ ê·¸ëŒ€ë¡œ ë°›ì•„ì™€ì„œ ê´€ë¦¬ í•  ë³€ìˆ˜
+	private static AppManager s_instance; // AppManager ÀÚ½ÅÀ» ³ªÅ¸³»´Â º¯¼ö
+	private MainView _view; // SimplePainterView¸¦ ±×´ë·Î ¹Ş¾Æ¿Í¼­ °ü¸® ÇÒ º¯¼ö
+	private CampingCompanyView _campingcompview; // DrawingPanelView¸¦ ±×´ë·Î ¹Ş¾Æ¿Í¼­ °ü¸® ÇÒ º¯¼ö
 
-	public MainView getView() { // AppManagerë¥¼ í†µí•´ SimplePainterViewë¡œ ì ‘ê·¼í•˜ë ¤ í• ë•Œ ê·¸ SimplePainterViewë¥¼ ë°˜í™˜í•´ ì¤„ í•¨ìˆ˜
+	public MainView getView() { // AppManager¸¦ ÅëÇØ SimplePainterView·Î Á¢±ÙÇÏ·Á ÇÒ¶§ ±× SimplePainterView¸¦ ¹İÈ¯ÇØ ÁÙ ÇÔ¼ö
 		return _view;
 	} // getView()
 
-	public CampingCompanyView getCampingCompanyView() {// AppManagerë¥¼ í†µí•´ DrawingPanelViewë¡œ ì ‘ê·¼í•˜ë ¤ í• ë•Œ ê·¸ DrawingPanelViewë¥¼ ë°˜í™˜í•´ ì¤„ í•¨ìˆ˜
+	public CampingCompanyView getCampingCompanyView() {// AppManager¸¦ ÅëÇØ DrawingPanelView·Î Á¢±ÙÇÏ·Á ÇÒ¶§ ±× DrawingPanelView¸¦ ¹İÈ¯ÇØ ÁÙ ÇÔ¼ö
 		return _campingcompview;
 	} // getDrawView()
 
-	public void setView(MainView view) { // AppManagerë¥¼ í†µí•´ SimplePainterViewì— ì ‘ê·¼í•  ìˆ˜ ìˆë„ë¡ AppManagerì—
-													// SimplePainterViewë¥¼ ë“±ë¡í•´ì¤„ í•¨ìˆ˜
+	public void setView(MainView view) { // AppManager¸¦ ÅëÇØ SimplePainterView¿¡ Á¢±ÙÇÒ ¼ö ÀÖµµ·Ï AppManager¿¡
+													// SimplePainterView¸¦ µî·ÏÇØÁÙ ÇÔ¼ö
 		_view = view;
 	} // setView()
 
-	public void setCampingCompanyView(CampingCompanyView campingcompview) { // AppManagerë¥¼ í†µí•´ DrawingPanelViewì— ì ‘ê·¼í•  ìˆ˜ ìˆë„ë¡ AppManagerì—
-															// DrawingPanelViewë¥¼ ë“±ë¡í•´ì¤„ í•¨ìˆ˜
+	public void setCampingCompanyView(CampingCompanyView campingcompview) { // AppManager¸¦ ÅëÇØ DrawingPanelView¿¡ Á¢±ÙÇÒ ¼ö ÀÖµµ·Ï AppManager¿¡
+															// DrawingPanelView¸¦ µî·ÏÇØÁÙ ÇÔ¼ö
 		_campingcompview = campingcompview;
 	} // setDrawView()
 
 	public static AppManager getInstance() {
 
-		if (s_instance == null) // ì²˜ìŒ í˜¸ì¶œë˜ì—ˆë‹¤ë©´ ì „ì²´ì ìœ¼ë¡œ ê´€ë¦¬ í•  AppManangerë¥¼ ìƒˆë¡œ ìƒì„±í•´ì£¼ê³  ë°˜í™˜
+		if (s_instance == null) // Ã³À½ È£ÃâµÇ¾ú´Ù¸é ÀüÃ¼ÀûÀ¸·Î °ü¸® ÇÒ AppMananger¸¦ »õ·Î »ı¼ºÇØÁÖ°í ¹İÈ¯
 			s_instance = new AppManager();
 		return s_instance;
 
