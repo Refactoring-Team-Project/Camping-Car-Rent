@@ -93,6 +93,8 @@ public class RentCustomerController {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			_view.changePanel(_rentCustView);
+			_view.setCurRow(-1);
+			_view.setCurCol(-1);
 
 			ArrayList<Object[]> arr = rentCustModel.select(_rentCustView.getConn());
 			_rentCustView.model.setDataVector(null, arr.get(0));
