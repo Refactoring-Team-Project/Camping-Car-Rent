@@ -1,7 +1,5 @@
 package team_project;
 
-import javax.swing.JFrame;
-
 public class Main {
 
 	public static void main(String[] args) {
@@ -10,6 +8,9 @@ public class Main {
 		MainView primary = new MainView();
 		CampingCompanyView ccv = new CampingCompanyView();
 		CampingCompanyController cccon = new CampingCompanyController();
+
+		RentCustomerView rcv = new RentCustomerView();
+		RentCustomerController rccon = new RentCustomerController();
 	}
 
 }
