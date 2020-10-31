@@ -148,5 +148,8 @@ public class MainView extends JFrame {
 	   public void addCampCompListener(ActionListener listener) {
 			btnCampComp.addActionListener(listener);
 		}
+	   public void addUserButtonListener(ActionListener listener) {
+		   btnUser.addActionListener(listener);
+	   }
 	   
 }

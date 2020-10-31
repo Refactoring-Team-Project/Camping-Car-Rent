@@ -8,8 +8,10 @@ public class Main {
 
 		// SimplePainterController ����
 		MainView primary = new MainView();
+		MainController mc = new MainController();
 		CampingCompanyView ccv = new CampingCompanyView();
 		CampingCompanyController cccon = new CampingCompanyController();
+		
 	}
 
 }
