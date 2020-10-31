@@ -19,6 +19,8 @@ public class MainView extends JFrame {
 	private CampingCompanyController campCompController;
 	private RentCustomerView rentCustView;
 	private RentCustomerController rentCustController;
+	private CarCheckView CarChkView;
+	private CarCheckController CarChkController;
 	JButton btnCampComp, btnCustomer, btnCampCar, btnRepairshop, btnRentCar, btnCarCheck, btnRepairList, btnRentList,
 			btnSearch1, btnSearch2, btnSearch3, btnSearch4;
 	JButton btnUser_Search1, btnUser_Search2, btnUser_Search3;
@@ -152,7 +154,6 @@ public class MainView extends JFrame {
 
 	public int getCurCol() {
 		return curCol;
-
 	}
 
 	public void setCurCol(int selectedCol) {
@@ -181,6 +182,11 @@ public class MainView extends JFrame {
 
 	public void addRentCustListener(ActionListener listener) {
 		btnCustomer.addActionListener(listener);
+
+	}
+
+	public void addCarChkListener(ActionListener listener) {
+		btnCarCheck.addActionListener(listener);
 
 	}
 

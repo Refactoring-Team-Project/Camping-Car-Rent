@@ -1,5 +1,6 @@
 package team_project;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionListener;
@@ -19,16 +20,16 @@ import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
 
-public class RentCustomerView extends JPanel {
+public class CarCheckView extends JPanel {
 
-//	RentCustomerModel dataModel;
+	private CarCheckModel carChkModel;
 	private MainView _view;
 	DefaultTableModel model;
 	JTable dbResult;
 	JScrollPane scrollPane;
 	JPanel updatePanel, buttonPanel;
-	int curRow = -1, curCol = -1;
-	JButton btnInput, btnDelete, btnUpdate;
+//	int curRow = -1, curCol = -1;
+	JButton btnRequest;
 	JLabel[] labels;
 	JTextField[] tf;
 
@@ -37,11 +38,13 @@ public class RentCustomerView extends JPanel {
 	PreparedStatement pstmt; // insert, delete
 	ResultSet rs;
 
-	public RentCustomerView() {
+	public CarCheckView() {
 		super.setLayout(new FlowLayout());
 		setPreferredSize(new Dimension(780, 420));
-		AppManager.getInstance().setRentCustomerView(this);
+		AppManager.getInstance().setCarCheckView(this);
 		_view = AppManager.getInstance().getView();
+		carChkModel = new CarCheckModel();
+
 		_conn = _view.conn;
 		model = new DefaultTableModel() {
 			public boolean isCellEditable(int row, int column) {
@@ -53,21 +56,35 @@ public class RentCustomerView extends JPanel {
 		add(scrollPane);
 
 		updatePanel = new JPanel();
-		labels = new JLabel[5];
-		labels[0] = new JLabel("license_no:");
-		labels[1] = new JLabel("name:");
-		labels[2] = new JLabel("address:");
-		labels[3] = new JLabel("phone:");
-		labels[4] = new JLabel("email:");
+		labels = new JLabel[10];
+		labels[0] = new JLabel("repairno");
+		labels[1] = new JLabel("carid");
+		labels[2] = new JLabel("shopid");
+		labels[3] = new JLabel("compid");
+		labels[4] = new JLabel("license_no");
+		labels[5] = new JLabel("repairdetails");
+		labels[6] = new JLabel("repairdate");
+		labels[7] = new JLabel("repaircost");
+		labels[8] = new JLabel("paymentdeadline");
+		labels[9] = new JLabel("repairhistory");
 
-		tf = new JTextField[5];
+		tf = new JTextField[10];
 		tf[0] = new JTextField("", 3);
-		tf[1] = new JTextField("", 7);
-		tf[2] = new JTextField("", 10);
-		tf[3] = new JTextField("", 10);
-		tf[4] = new JTextField("", 10);
+		tf[1] = new JTextField("", 3);
+		tf[2] = new JTextField("", 3);
+		tf[3] = new JTextField("", 3);
+		tf[4] = new JTextField("", 3);
+		tf[5] = new JTextField("", 10);
+		tf[6] = new JTextField("", 5);
+		tf[7] = new JTextField("", 3);
+		tf[8] = new JTextField("", 5);
+		tf[9] = new JTextField("", 10);
 
-		for (int i = 0; i < 5; i++) {
+		tf[1].setEnabled(false);
+		tf[3].setEnabled(false);
+		tf[4].setEnabled(false);
+
+		for (int i = 0; i < 10; i++) {
 			updatePanel.add(labels[i]);
 			updatePanel.add(tf[i]);
 		}
@@ -76,13 +93,9 @@ public class RentCustomerView extends JPanel {
 
 		buttonPanel = new JPanel();
 
-		btnInput = new JButton("입력");
-		btnDelete = new JButton("삭제");
-		btnUpdate = new JButton("변경");
+		btnRequest = new JButton("수리요청");
 
-		buttonPanel.add(btnInput);
-		buttonPanel.add(btnDelete);
-		buttonPanel.add(btnUpdate);
+		buttonPanel.add(btnRequest);
 
 		add(buttonPanel);
 
@@ -92,14 +105,11 @@ public class RentCustomerView extends JPanel {
 
 		dbResult.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		// mouseListener 처리하기
-		dbResult.addMouseListener(new RentCustomerMouseListener());
-
+		dbResult.addMouseListener(new CarCheckMouseListener());
 	}
 
 	public void addButtonListener(ActionListener listener) {
-		btnInput.addActionListener(listener);
-		btnDelete.addActionListener(listener);
-		btnUpdate.addActionListener(listener);
+		btnRequest.addActionListener(listener);
 	}
 
 	public Connection getConn() {
@@ -113,12 +123,23 @@ public class RentCustomerView extends JPanel {
 		repaint();
 	}
 
-	private class RentCustomerMouseListener implements MouseListener {
+	private class CarCheckMouseListener implements MouseListener {
 
 		@Override
 		public void mouseClicked(MouseEvent e) {
 			_view.setCurRow(dbResult.getSelectedRow());
 			_view.setCurCol(dbResult.getSelectedColumn());
+
+			carChkModel.select(getConn(), dbResult.getModel().getValueAt(_view.getCurRow(), 0));
+
+			tf[1].setText(carChkModel.getSelectedCarid());
+			tf[1].setDisabledTextColor(Color.black);
+
+			tf[3].setText(carChkModel.getSelectedCompid());
+			tf[3].setDisabledTextColor(Color.black);
+
+			tf[4].setText(carChkModel.getSelectedLicense_no());
+			tf[4].setDisabledTextColor(Color.black);
 		}
 
 		@Override
