@@ -111,8 +111,8 @@ public class RepairListView extends JPanel {
 
 		@Override
 		public void mouseClicked(MouseEvent e) {
-			curRow = dbResult.getSelectedRow();
-			curCol = dbResult.getSelectedColumn();
+			_view.setCurRow(dbResult.getSelectedRow());
+			_view.setCurCol(dbResult.getSelectedColumn());
 		}
 
 		@Override
