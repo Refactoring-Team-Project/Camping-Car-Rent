@@ -98,11 +98,46 @@ public class RepairListView extends JPanel {
 		buttonPanel.setPreferredSize(new Dimension(780, 50));
 
 		dbResult.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		dbResult.addMouseListener(new RepairShopMouseListener());
 	}
 
 	public void addButtonListener(ActionListener listener) {
 		btnDelete.addActionListener(listener);
 		btnUpdate.addActionListener(listener);
+	}
+	
+	private class RepairShopMouseListener implements MouseListener {
+
+		@Override
+		public void mouseClicked(MouseEvent e) {
+			curRow = dbResult.getSelectedRow();
+			curCol = dbResult.getSelectedColumn();
+		}
+
+		@Override
+		public void mousePressed(MouseEvent e) {
+			// TODO Auto-generated method stub
+
+		}
+
+		@Override
+		public void mouseReleased(MouseEvent e) {
+			// TODO Auto-generated method stub
+
+		}
+
+		@Override
+		public void mouseEntered(MouseEvent e) {
+			// TODO Auto-generated method stub
+
+		}
+
+		@Override
+		public void mouseExited(MouseEvent e) {
+			// TODO Auto-generated method stub
+
+		}
+
 	}
 
 	public Connection getConn() {
