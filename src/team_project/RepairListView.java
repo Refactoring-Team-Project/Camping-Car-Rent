@@ -4,6 +4,7 @@ import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -98,15 +99,15 @@ public class RepairListView extends JPanel {
 		buttonPanel.setPreferredSize(new Dimension(780, 50));
 
 		dbResult.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		dbResult.addMouseListener(new RepairShopMouseListener());
+		dbResult.addMouseListener(new RepairListMouseListener());
 	}
 
 	public void addButtonListener(ActionListener listener) {
 		btnDelete.addActionListener(listener);
 		btnUpdate.addActionListener(listener);
 	}
-	
-	private class RepairShopMouseListener implements MouseListener {
+
+	private class RepairListMouseListener implements MouseListener {
 
 		@Override
 		public void mouseClicked(MouseEvent e) {
