@@ -100,12 +100,6 @@ public class RepairListView extends JPanel {
 		dbResult.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 	}
 
-	public void mouseClicked(MouseEvent e) {
-		curRow = dbResult.getSelectedRow();
-		curCol = dbResult.getSelectedColumn();
-
-	}
-
 	public void addButtonListener(ActionListener listener) {
 		btnDelete.addActionListener(listener);
 		btnUpdate.addActionListener(listener);
